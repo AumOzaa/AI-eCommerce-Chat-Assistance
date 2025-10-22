@@ -1,0 +1,108 @@
+[
+  {
+    "id": "FUR001",
+    "name": "Modern Wooden Dining Table",
+    "category": "Dining",
+    "price": 18999,
+    "currency": "INR",
+    "warranty": "2 years",
+    "manufacturer": "UrbanCraft Furnitures",
+    "material": "Sheesham Wood",
+    "color": "Walnut Brown",
+    "dimensions": {
+      "length_cm": 180,
+      "width_cm": 90,
+      "height_cm": 75
+    },
+    "weight_kg": 35,
+    "availability": "In Stock",
+    "delivery_time": "5-7 business days",
+    "return_policy": "10-day replacement",
+    "rating": 4.6
+  },
+  {
+    "id": "FUR002",
+    "name": "ErgoComfort Office Chair",
+    "category": "Office",
+    "price": 7999,
+    "currency": "INR",
+    "warranty": "1 year",
+    "manufacturer": "WorkSmart India Pvt. Ltd.",
+    "material": "Mesh & Metal",
+    "color": "Black",
+    "dimensions": {
+      "length_cm": 60,
+      "width_cm": 60,
+      "height_cm": 110
+    },
+    "weight_kg": 12,
+    "availability": "Limited Stock",
+    "delivery_time": "3-5 business days",
+    "return_policy": "7-day return",
+    "rating": 4.4
+  },
+  {
+    "id": "FUR003",
+    "name": "Velvet Queen Size Bed",
+    "category": "Bedroom",
+    "price": 34999,
+    "currency": "INR",
+    "warranty": "5 years",
+    "manufacturer": "SleepNest Furnishings",
+    "material": "Velvet Upholstery with Solid Wood Frame",
+    "color": "Royal Blue",
+    "dimensions": {
+      "length_cm": 210,
+      "width_cm": 160,
+      "height_cm": 110
+    },
+    "weight_kg": 65,
+    "availability": "Pre-order",
+    "delivery_time": "10-12 business days",
+    "return_policy": "No return, only replacement for damages",
+    "rating": 4.8
+  },
+  {
+    "id": "FUR004",
+    "name": "Glass Top Coffee Table",
+    "category": "Living Room",
+    "price": 6499,
+    "currency": "INR",
+    "warranty": "1 year",
+    "manufacturer": "HomeVista Designs",
+    "material": "Tempered Glass & Metal",
+    "color": "Silver & Black",
+    "dimensions": {
+      "length_cm": 100,
+      "width_cm": 50,
+      "height_cm": 45
+    },
+    "weight_kg": 18,
+    "availability": "In Stock",
+    "delivery_time": "4-6 business days",
+    "return_policy": "5-day easy return",
+    "rating": 4.3
+  },
+  {
+    "id": "FUR005",
+    "name": "Bookshelf with Cabinet",
+    "category": "Study",
+    "price": 12999,
+    "currency": "INR",
+    "warranty": "3 years",
+    "manufacturer": "SmartSpace Interiors",
+    "material": "Engineered Wood",
+    "color": "Matte Teak Finish",
+    "dimensions": {
+      "length_cm": 80,
+      "width_cm": 35,
+      "height_cm": 180
+    },
+    "weight_kg": 40,
+    "availability": "In Stock",
+    "delivery_time": "5-7 business days",
+    "return_policy": "7-day return",
+    "rating": 4.5
+  }
+]
+
