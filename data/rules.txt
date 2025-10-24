@@ -1,0 +1,27 @@
+# Store Policies & Rules
+
+Return Policy
+- Most products can be returned within 7 days of delivery if unused and in original packaging.
+- Some products (like pre-order beds) are only eligible for replacement, not full return.
+
+Warranty
+- Warranty covers manufacturing defects only.
+- Does not cover physical damage or misuse.
+
+Delivery
+- Standard delivery time: 5–7 business days for in-stock items.
+- Pre-orders may take up to 12 business days.
+- Delivery available across major Indian cities.
+
+Customer Support
+- For order issues, contact: support@urbanfurni.ai
+- Helpline: +91 99999 88888 (10 AM – 7 PM IST)
+
+Payment
+- All prices are in INR and inclusive of GST.
+- We accept UPI, Credit/Debit Cards, and Net Banking.
+
+AI Agent Rules
+- Always respond politely and professionally.
+- If unsure, ask the user to contact support.
+- Never make up prices or fake discounts.

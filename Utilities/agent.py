@@ -7,6 +7,21 @@ from llama_index.llms.ollama import Ollama
 cart = []
 wishlist = []
 
+
+llm = Ollama(
+        model="mistral-nemo:latest",
+        temperature=0,
+        context_window=8000,
+        thinking=False,
+)
+
+Settings.llm = llm  # same instance
+
+Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-base-en-v1.5")
+documents = SimpleDirectoryReader("data").load_data()
+index = VectorStoreIndex.from_documents(documents)
+query_engine = index.as_query_engine()
+
 # Make the search function synchronous
 def search_furniture_products(query: str) -> str: #todo : Pass the query engine here.
     """
@@ -18,6 +33,9 @@ def search_furniture_products(query: str) -> str: #todo : Pass the query engine 
     - Specific furniture items (sofas, tables, chairs, beds, etc.)
     - Comparisons between products
     - Product recommendations
+    - Customer support
+    - Warranty
+    - Delivery
     
     Args:
         query: Natural language question about furniture products
@@ -30,11 +48,6 @@ def search_furniture_products(query: str) -> str: #todo : Pass the query engine 
     - "Tell me about leather recliners"
     - "What's the material of the Oak Dining Table?"
     """
-
-    Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-base-en-v1.5")
-    documents = SimpleDirectoryReader("data").load_data()
-    index = VectorStoreIndex.from_documents(documents)
-    query_engine = index.as_query_engine()
 
     # Use synchronous query instead
     response = query_engine.query(query)
@@ -53,10 +66,7 @@ def addToWishlist(item)->str:
 # Create an agent workflow with our calculator tool
 agent = FunctionAgent(
     tools=[addToCart,search_furniture_products,addToWishlist],
-    llm=Gemini(
-    model="gemini-2.5-flash",
-    api_key="AIzaSyDiLGcptDvMcSYNzx_",  # todo : make the API in env folder.
-),
+
     system_prompt="""You are a helpful furniture store assistant. 
 
 Your capabilities:
