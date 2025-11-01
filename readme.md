@@ -3,6 +3,7 @@ This is a project where I built an AI-powered chat assistant for eCommerce use c
 It can answer questions about products, availability, and details using Ollama, LlamaIndex, and Streamlit.
 
 The goal of this project was to explore how Retrieval-Augmented Generation (RAG) can be used along with agentic capabilities to make chatbots that understand product data.
+![FurniAI image](Notebooks/Images/cover.png)
 
 ## Features
 - **Interactive Chat Interface** :
