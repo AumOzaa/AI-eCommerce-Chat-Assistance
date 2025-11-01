@@ -3,7 +3,7 @@ import asyncio
 from Utilities.agent import agent
 
 st.set_page_config(page_title="AI Chatbot", page_icon="💬", layout="centered")
-st.title("💬 Chatbot")
+st.title("💬 FurniBot")
 
 # Initialize chat history
 if "chat_history" not in st.session_state:
