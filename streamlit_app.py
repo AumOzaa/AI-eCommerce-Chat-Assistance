@@ -1,33 +1,49 @@
 import streamlit as st
-import string
-import random
+import asyncio
+from Utilities.agent import agent
 
+st.set_page_config(page_title="AI Chatbot", page_icon="💬", layout="centered")
+st.title("💬 Chatbot")
 
-def randon_string() -> str:
-    return "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
-
-def generating_response() -> str:
-
-
-def chat_actions():
-    st.session_state["chat_history"].append(
-        {"role": "user", "content": st.session_state["chat_input"]},
-    )
-
-    st.session_state["chat_history"].append(
-        {
-            "role": "assistant",
-            "content": randon_string(),
-        },  # This can be replaced with your chat response logic
-    )
-
-
+# Initialize chat history
 if "chat_history" not in st.session_state:
     st.session_state["chat_history"] = []
 
 
-st.chat_input("Enter your message", on_submit=chat_actions, key="chat_input")
+# Display previous chat history
+for message in st.session_state["chat_history"]:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
-for i in st.session_state["chat_history"]:
-    with st.chat_message(name=i["role"]):
-        st.write(i["content"])
+
+async def chat(user_input: str):
+    response = await agent.run(user_input)
+    return response
+
+
+def run_async(func, *args, **kwargs):
+    """Safely run async code inside Streamlit."""
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+    return loop.run_until_complete(func(*args, **kwargs))
+
+
+# Handle chat input
+if user_input := st.chat_input("Enter your message..."):
+    # Add user message
+    st.session_state["chat_history"].append({"role": "user", "content": user_input})
+    with st.chat_message("user"):
+        st.markdown(user_input)
+
+    # Generate agent response
+    with st.chat_message("assistant"):
+        message_placeholder = st.empty()
+        with st.spinner("Thinking..."):
+            response = run_async(chat, user_input)
+        message_placeholder.markdown(response)
+
+    # Save assistant reply
+    st.session_state["chat_history"].append({"role": "assistant", "content": response})
