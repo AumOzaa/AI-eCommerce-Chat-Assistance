@@ -20,7 +20,7 @@ Settings.llm = llm  # same instance
 
 Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-base-en-v1.5")
 documents = SimpleDirectoryReader("data").load_data()
-print(f"✅ Loaded {len(documents)} documents from data/")
+print(f"Loaded {len(documents)} documents from data/")
 if len(documents) > 0:
     print("Sample document:\n", documents[0].text[:500])
 index = VectorStoreIndex.from_documents(documents)
