@@ -29,7 +29,7 @@ Creating a venv :
 python3 -m venv venv
 ```
 
-### MacOS/Linux Destro:
+### MacOS/Linux Distro:
 Activate the venv : 
 ```bash
 source venv/bin/activate
